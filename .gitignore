@@ -1,0 +1,4 @@
+# Tooling / local state (not part of the website)
+.remember/
+.DS_Store
+.claude/
