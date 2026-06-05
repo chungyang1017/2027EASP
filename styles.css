@@ -138,13 +138,14 @@ a { color: var(--navy); text-decoration: none; }
 /* East Asia network constellation (decorative) */
 .hero-net { position: absolute; top: 6%; right: 1%; width: min(48%, 540px); z-index: 1; pointer-events: none; }
 .hero-net svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 0 6px rgba(56,189,248,.25)); }
-.hero-net .links { animation: net-shimmer 5s ease-in-out infinite; }
-.hero-net .host-ring { transform-box: fill-box; transform-origin: center; animation: net-ping 2.6s ease-out infinite; }
+.hero-net .land path { fill: rgba(56,189,248,.10); stroke: #38bdf8; stroke-width: 0.7; stroke-linejoin: round; }
+.hero-net text { font-family: var(--mono); font-size: 5px; fill: #7dd3fc; fill-opacity: .85; }
+.hero-net .ping { transform-box: fill-box; transform-origin: center; animation: net-ping 2.6s ease-out infinite; }
 @keyframes net-shimmer { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
 @keyframes net-ping { 0% { transform: scale(1); opacity: .7; } 70% { transform: scale(1.9); opacity: 0; } 100% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
   .robot, .robot svg, .robot .beacon, .robot .thruster,
-  .hero-net .links, .hero-net .host-ring { animation: none; }
+  .hero-net .ping { animation: none; }
 }
 
 /* ---------- Sections ---------- */
@@ -235,6 +236,7 @@ a { color: var(--navy); text-decoration: none; }
 .site-footer a { color: rgba(255,255,255,.75); }
 .site-footer a:hover { color: var(--gold); }
 .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; padding-top: 1.4rem; font-size: .85rem; }
+.map-credit { font-size: .78rem; opacity: .6; }
 
 /* ---------- Reveal animation ---------- */
 .section, .topic-card, .speaker, .venue-card { opacity: 1; }
