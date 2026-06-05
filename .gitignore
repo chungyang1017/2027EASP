@@ -2,3 +2,6 @@
 .remember/
 .DS_Store
 .claude/
+agentdb.rvf
+agentdb.rvf.lock
+ruvector.db
