@@ -167,10 +167,10 @@ a { color: var(--navy); text-decoration: none; }
   transform: translateY(-50%);
   padding-left: 9px;
   font-family: var(--mono);
-  font-size: .62rem;
+  font-size: .68rem;
   letter-spacing: .4px;
-  color: rgba(207,234,255,.82);
-  text-shadow: 0 1px 3px #000, 0 0 7px rgba(0,0,0,.9);
+  color: rgba(222,242,255,.95);
+  text-shadow: 0 1px 4px #000, 0 0 9px rgba(0,0,0,.95);
   white-space: nowrap;
 }
 .map-stage .city::before {
