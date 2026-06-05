@@ -254,7 +254,8 @@ a { color: var(--navy); text-decoration: none; }
   .nav-toggle { display: flex; }
   .brand-logo { height: 30px; }
   .hero-title { white-space: normal; }
-  .robot, .hero-net { display: none; }
+  .robot { display: none; }
+  .hero-net { position: static; right: auto; top: auto; width: min(90%, 360px); margin: 2.5rem auto 0; }
   .about-grid, .topics, .speakers-grid, .venue-grid, .footer-grid { grid-template-columns: 1fr; }
   .topics, .speakers-grid, .venue-grid { gap: 1rem; }
 }
