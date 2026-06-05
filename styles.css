@@ -90,7 +90,7 @@ a { color: var(--navy); text-decoration: none; }
   background:
     radial-gradient(1100px 520px at 80% -12%, rgba(56,189,248,.28), transparent 60%),
     radial-gradient(820px 460px at 6% 116%, rgba(14,165,233,.16), transparent 60%),
-    linear-gradient(160deg, #0b1f33 0%, #08182a 55%, #050e1b 100%);
+    linear-gradient(160deg, #17486e 0%, #103654 55%, #0b2840 100%);
 }
 .hero-bg::after {
   content: ""; position: absolute; inset: 0;
@@ -115,9 +115,50 @@ a { color: var(--navy); text-decoration: none; }
 .meta-value { font-weight: 600; font-size: 1.05rem; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
 
+/* ---------- Roaming robot (decorative, never blocks text) ---------- */
+.hero-inner { position: relative; z-index: 2; }
+.robot {
+  position: absolute; top: 62%; right: 11%;
+  width: 56px; z-index: 1; pointer-events: none;
+  filter: drop-shadow(0 0 8px rgba(56,189,248,.45));
+  animation: robot-patrol 12s ease-in-out infinite;
+}
+.robot svg { display: block; animation: robot-bob 1.8s ease-in-out infinite; }
+.robot .beacon { animation: robot-blink 1.3s steps(1, end) infinite; }
+.robot .thruster { animation: robot-thrust 1.8s ease-in-out infinite; transform-origin: center; }
+@keyframes robot-patrol {
+  0%, 100% { transform: translateX(0) scaleX(1); }
+  46%      { transform: translateX(-170px) scaleX(1); }
+  50%      { transform: translateX(-170px) scaleX(-1); }
+  96%      { transform: translateX(0) scaleX(-1); }
+}
+@keyframes robot-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes robot-blink { 0%, 78% { opacity: 1; } 86%, 100% { opacity: .22; } }
+@keyframes robot-thrust { 0%, 100% { opacity: .18; } 50% { opacity: .45; } }
+/* East Asia network constellation (decorative) */
+.hero-net { position: absolute; top: 6%; right: 1%; width: min(48%, 540px); z-index: 1; pointer-events: none; }
+.hero-net svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 0 6px rgba(56,189,248,.25)); }
+.hero-net .links { animation: net-shimmer 5s ease-in-out infinite; }
+.hero-net .host-ring { transform-box: fill-box; transform-origin: center; animation: net-ping 2.6s ease-out infinite; }
+@keyframes net-shimmer { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+@keyframes net-ping { 0% { transform: scale(1); opacity: .7; } 70% { transform: scale(1.9); opacity: 0; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .robot, .robot svg, .robot .beacon, .robot .thruster,
+  .hero-net .links, .hero-net .host-ring { animation: none; }
+}
+
 /* ---------- Sections ---------- */
 .section { padding: 5.5rem 0; }
-.section-alt { background: var(--mist); }
+.section-alt { background: var(--mist); position: relative; isolation: isolate; }
+.section-alt::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(12,74,110,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12,74,110,.045) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+}
 .section-head { margin-bottom: 2.6rem; }
 .section-head.center { text-align: center; max-width: 640px; margin-inline: auto; }
 .kicker { display: inline-block; font-family: var(--mono); text-transform: uppercase; letter-spacing: 2px; font-size: .74rem; font-weight: 700; color: var(--sky); margin-bottom: .6rem; }
@@ -125,7 +166,8 @@ a { color: var(--navy); text-decoration: none; }
 .section h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); color: var(--ink); letter-spacing: -.5px; }
 .theme-sub { font-family: var(--serif); font-size: clamp(1.05rem, 2.2vw, 1.4rem); font-weight: 500; color: var(--navy); margin-top: .5rem; }
 .section-dark h2 { color: #fff; }
-.lead { font-size: 1.15rem; color: var(--slate); max-width: 60ch; }
+.lead { font-size: 1.15rem; color: var(--slate); max-width: 62ch; }
+.lead strong { color: var(--navy); font-weight: 700; }
 .lead-light { color: rgba(255,255,255,.85); }
 
 /* ---------- About ---------- */
@@ -140,8 +182,10 @@ a { color: var(--navy); text-decoration: none; }
 
 /* ---------- Topics ---------- */
 .topics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.4rem; }
-.topic-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; transition: transform .2s, box-shadow .2s; }
-.topic-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.topic-card { position: relative; overflow: hidden; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; transition: transform .2s, box-shadow .2s, border-color .2s; }
+.topic-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--cyan), transparent 70%); opacity: 0; transition: opacity .2s; }
+.topic-card:hover::before { opacity: 1; }
+.topic-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(56,189,248,.16); border-color: rgba(56,189,248,.45); }
 .topic-card h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: .4rem; }
 .topic-card p { color: var(--slate); font-size: .95rem; }
 
@@ -155,7 +199,7 @@ a { color: var(--navy); text-decoration: none; }
 .tl-body p { color: var(--slate); }
 
 /* ---------- CFP (dark) ---------- */
-.section-dark { background: linear-gradient(160deg, #08182a, #050e1b); color: #fff; }
+.section-dark { background: linear-gradient(160deg, #123a5c, #0b2840); color: #fff; }
 .cfp-inner { max-width: 720px; }
 .cfp-list { list-style: none; margin: 1.6rem 0 2rem; display: grid; gap: .7rem; }
 .cfp-list li { padding-left: 1.8rem; position: relative; color: rgba(255,255,255,.9); }
@@ -210,6 +254,7 @@ a { color: var(--navy); text-decoration: none; }
   .nav-toggle { display: flex; }
   .brand-logo { height: 30px; }
   .hero-title { white-space: normal; }
+  .robot, .hero-net { display: none; }
   .about-grid, .topics, .speakers-grid, .venue-grid, .footer-grid { grid-template-columns: 1fr; }
   .topics, .speakers-grid, .venue-grid { gap: 1rem; }
 }
