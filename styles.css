@@ -135,17 +135,19 @@ a { color: var(--navy); text-decoration: none; }
 @keyframes robot-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
 @keyframes robot-blink { 0%, 78% { opacity: 1; } 86%, 100% { opacity: .22; } }
 @keyframes robot-thrust { 0%, 100% { opacity: .18; } 50% { opacity: .45; } }
-/* East Asia network constellation (decorative) */
-.hero-net { position: absolute; top: 6%; right: 1%; width: min(48%, 540px); z-index: 1; pointer-events: none; }
-.hero-net svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 0 6px rgba(56,189,248,.25)); }
-.hero-net .land path { fill: rgba(56,189,248,.10); stroke: #38bdf8; stroke-width: 0.7; stroke-linejoin: round; }
-.hero-net text { font-family: var(--mono); font-size: 5px; fill: #7dd3fc; fill-opacity: .85; }
-.hero-net .ping { transform-box: fill-box; transform-origin: center; animation: net-ping 2.6s ease-out infinite; }
-@keyframes net-shimmer { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
-@keyframes net-ping { 0% { transform: scale(1); opacity: .7; } 70% { transform: scale(1.9); opacity: 0; } 100% { opacity: 0; } }
+/* East Asia night-lights map (decorative) */
+.hero-net { position: absolute; top: 7%; right: 0; width: min(50%, 600px); z-index: 1; pointer-events: none; }
+.hero-net .night { width: 100%; display: block; mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(ellipse 74% 74% at 52% 50%, #000 52%, transparent 100%);
+  mask-image: radial-gradient(ellipse 74% 74% at 52% 50%, #000 52%, transparent 100%); }
+.hero-net .city { position: absolute; transform: translate(-50%, -50%); font-family: var(--mono); font-size: .72rem; color: #cfeaff; text-shadow: 0 1px 3px #000; white-space: nowrap; }
+.hero-net .mk { position: absolute; }
+.hero-net .mk .dot { position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: #fb923c; box-shadow: 0 0 8px #fb923c; }
+.hero-net .mk .ring { position: absolute; left: -9px; top: -9px; width: 18px; height: 18px; border: 1.5px solid #fb923c; border-radius: 50%; animation: net-ping 2.6s ease-out infinite; }
+.hero-net .mk b { position: absolute; left: 13px; top: -8px; font-family: var(--mono); font-weight: 700; font-size: .74rem; color: #fb923c; white-space: nowrap; }
+@keyframes net-ping { 0% { transform: scale(1); opacity: .75; } 70% { transform: scale(2); opacity: 0; } 100% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
-  .robot, .robot svg, .robot .beacon, .robot .thruster,
-  .hero-net .ping { animation: none; }
+  .hero-net .mk .ring { animation: none; }
 }
 
 /* ---------- Sections ---------- */
@@ -257,7 +259,7 @@ a { color: var(--navy); text-decoration: none; }
   .brand-logo { height: 30px; }
   .hero-title { white-space: normal; }
   .robot { display: none; }
-  .hero-net { position: static; right: auto; top: auto; width: min(90%, 360px); margin: 2.5rem auto 0; }
+  .hero-net { position: relative; right: auto; top: auto; width: min(92%, 440px); margin: 2.5rem auto 0; }
   .about-grid, .topics, .speakers-grid, .venue-grid, .footer-grid { grid-template-columns: 1fr; }
   .topics, .speakers-grid, .venue-grid { gap: 1rem; }
 }
