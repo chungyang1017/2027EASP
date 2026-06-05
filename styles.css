@@ -4,8 +4,8 @@
    =========================================================== */
 
 :root {
-  --navy: #0f4c81;
-  --navy-deep: #0a3a63;
+  --navy: #15795f;
+  --navy-deep: #0e5a46;
   --ink: #15212e;
   --slate: #4a5a6a;
   --gold: #d99b3a;
@@ -14,8 +14,8 @@
   --mist: #f4f7fa;
   --line: #e3e9ef;
   --radius: 14px;
-  --shadow: 0 10px 30px rgba(15, 76, 129, 0.10);
-  --shadow-lg: 0 24px 60px rgba(15, 76, 129, 0.18);
+  --shadow: 0 10px 30px rgba(15, 90, 70, 0.12);
+  --shadow-lg: 0 24px 60px rgba(15, 90, 70, 0.20);
   --maxw: 1120px;
   --serif: "Fraunces", Georgia, "Times New Roman", serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -86,7 +86,7 @@ a { color: var(--navy); text-decoration: none; }
   position: absolute; inset: 0; z-index: -1;
   background:
     radial-gradient(1200px 500px at 80% -10%, rgba(217,155,58,.35), transparent 60%),
-    linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 55%, #082c4d 100%);
+    linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 55%, #073a2d 100%);
 }
 .hero-bg::after {
   content: ""; position: absolute; inset: 0;
@@ -145,7 +145,7 @@ a { color: var(--navy); text-decoration: none; }
 .tl-body p { color: var(--slate); }
 
 /* ---------- CFP (dark) ---------- */
-.section-dark { background: linear-gradient(135deg, var(--navy-deep), #082c4d); color: #fff; }
+.section-dark { background: linear-gradient(135deg, var(--navy-deep), #073a2d); color: #fff; }
 .cfp-inner { max-width: 720px; }
 .cfp-list { list-style: none; margin: 1.6rem 0 2rem; display: grid; gap: .7rem; }
 .cfp-list li { padding-left: 1.8rem; position: relative; color: rgba(255,255,255,.9); }
