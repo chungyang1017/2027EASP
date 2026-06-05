@@ -157,16 +157,38 @@ a { color: var(--navy); text-decoration: none; }
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, #05070f 0%, rgba(5,7,15,.92) 32%, rgba(5,7,15,.38) 55%, rgba(5,7,15,.06) 78%, rgba(5,7,15,.16) 100%),
+    linear-gradient(90deg, rgba(5,7,15,.80) 0%, rgba(5,7,15,.58) 34%, rgba(5,7,15,.24) 56%, rgba(5,7,15,.04) 78%, rgba(5,7,15,.12) 100%),
     linear-gradient(180deg, rgba(5,7,15,.76) 0%, transparent 22%, transparent 70%, #05070f 100%);
 }
+/* Subtle city markers (kept subordinate to Taiwan) */
+.map-stage .city {
+  position: absolute;
+  z-index: 2;
+  transform: translateY(-50%);
+  padding-left: 9px;
+  font-family: var(--mono);
+  font-size: .62rem;
+  letter-spacing: .4px;
+  color: rgba(207,234,255,.82);
+  text-shadow: 0 1px 3px #000, 0 0 7px rgba(0,0,0,.9);
+  white-space: nowrap;
+}
+.map-stage .city::before {
+  content: "";
+  position: absolute; left: 0; top: 50%;
+  width: 4px; height: 4px; margin-top: -2px;
+  border-radius: 50%;
+  background: #bfe6ff;
+  box-shadow: 0 0 6px rgba(191,230,255,.9);
+}
+/* Taiwan — host city, most prominent + twinkling */
 .taiwan-glow {
   position: absolute;
   left: 56%;
   top: 65%;
-  z-index: 2;
-  width: 18px;
-  height: 18px;
+  z-index: 3;
+  width: 22px;
+  height: 22px;
   transform: translate(-50%, -50%);
 }
 .taiwan-glow i,
@@ -179,49 +201,49 @@ a { color: var(--navy); text-decoration: none; }
   transform: translate(-50%, -50%);
 }
 .taiwan-glow i {
-  width: 9px;
-  height: 9px;
-  background: #ffd27a;
-  box-shadow: 0 0 14px #ffd27a, 0 0 36px rgba(255,126,37,.96), 0 0 72px rgba(255,126,37,.54);
-  animation: taiwan-flash 1.6s ease-in-out infinite;
+  width: 13px;
+  height: 13px;
+  background: #ffe2a6;
+  box-shadow: 0 0 18px #ffd27a, 0 0 46px rgba(255,170,60,1), 0 0 98px rgba(255,126,37,.72);
+  animation: taiwan-flash 1.25s ease-in-out infinite;
 }
 .taiwan-glow::before {
-  width: 24px;
-  height: 24px;
-  border: 1px solid rgba(255,210,122,.78);
-  box-shadow: 0 0 18px rgba(255,126,37,.48);
-  animation: taiwan-pulse 1.6s ease-out infinite;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(255,210,122,.85);
+  box-shadow: 0 0 22px rgba(255,126,37,.55);
+  animation: taiwan-pulse 1.25s ease-out infinite;
 }
 .taiwan-glow::after {
-  width: 54px;
-  height: 54px;
-  background: radial-gradient(circle, rgba(255,210,122,.38) 0%, rgba(255,126,37,.20) 38%, transparent 70%);
-  animation: taiwan-halo 1.6s ease-in-out infinite;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255,210,122,.5) 0%, rgba(255,126,37,.26) 38%, transparent 70%);
+  animation: taiwan-halo 1.25s ease-in-out infinite;
 }
 .taiwan-glow b {
   position: absolute;
-  left: 18px;
-  top: -9px;
+  left: 22px;
+  top: -10px;
   font-family: var(--mono);
-  font-size: .72rem;
+  font-size: .82rem;
   font-weight: 700;
   letter-spacing: 1.5px;
-  color: #ffdca3;
-  text-shadow: 0 0 10px #000, 0 0 20px rgba(255,126,37,.9);
+  color: #ffe1a8;
+  text-shadow: 0 0 10px #000, 0 0 22px rgba(255,126,37,1);
   text-transform: uppercase;
   white-space: nowrap;
 }
 @keyframes taiwan-flash {
-  0%, 100% { opacity: .82; transform: translate(-50%, -50%) scale(.92); }
-  42% { opacity: 1; transform: translate(-50%, -50%) scale(1.22); }
+  0%, 100% { opacity: .78; transform: translate(-50%, -50%) scale(.84); }
+  42% { opacity: 1; transform: translate(-50%, -50%) scale(1.32); }
 }
 @keyframes taiwan-pulse {
-  0% { opacity: .86; transform: translate(-50%, -50%) scale(.62); }
-  72%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(2.2); }
+  0% { opacity: .9; transform: translate(-50%, -50%) scale(.55); }
+  72%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(2.5); }
 }
 @keyframes taiwan-halo {
-  0%, 100% { opacity: .35; transform: translate(-50%, -50%) scale(.86); }
-  44% { opacity: .82; transform: translate(-50%, -50%) scale(1.08); }
+  0%, 100% { opacity: .4; transform: translate(-50%, -50%) scale(.8); }
+  44% { opacity: .92; transform: translate(-50%, -50%) scale(1.14); }
 }
 @media (prefers-reduced-motion: reduce) {
   .taiwan-glow i,
