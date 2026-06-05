@@ -64,7 +64,10 @@ a { color: var(--navy); text-decoration: none; }
   border-bottom: 1px solid var(--line);
 }
 .nav-bar { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-.brand { display: flex; align-items: baseline; gap: .35rem; font-family: var(--serif); }
+.brand { display: flex; align-items: center; gap: .55rem; font-family: var(--serif); }
+.brand-logo { height: 34px; width: auto; display: block; }
+.brand-divider { width: 1px; height: 22px; background: var(--line); }
+.brand .brand-year { font-size: 1.35rem; font-weight: 700; color: var(--navy); letter-spacing: .5px; }
 .brand-mark { font-size: 1.5rem; font-weight: 700; color: var(--navy); letter-spacing: .5px; }
 .brand-year { font-size: 1.5rem; font-weight: 700; color: var(--gold); }
 .nav-links { display: flex; align-items: center; gap: 1.6rem; }
@@ -195,6 +198,7 @@ a { color: var(--navy); text-decoration: none; }
   .nav-links a { padding: .8rem 0; width: 100%; border-bottom: 1px solid var(--line); }
   .nav-cta { text-align: center; }
   .nav-toggle { display: flex; }
+  .brand-logo { height: 30px; }
   .about-grid, .topics, .speakers-grid, .venue-grid, .footer-grid { grid-template-columns: 1fr; }
   .topics, .speakers-grid, .venue-grid { gap: 1rem; }
 }
