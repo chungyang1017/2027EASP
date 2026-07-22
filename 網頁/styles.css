@@ -132,7 +132,25 @@ a { color: var(--navy); text-decoration: none; }
 @keyframes robot-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
 @keyframes robot-blink { 0%, 78% { opacity: 1; } 86%, 100% { opacity: .22; } }
 @keyframes robot-thrust { 0%, 100% { opacity: .18; } 50% { opacity: .45; } }
-/* East Asia night-lights photo background */
+/* Real-time solar-system canvas background (index.html) */
+.hero-sky { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: #05070f; overflow: hidden; }
+.hero-sky canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero-sky::after {
+  content: "";
+  position: absolute; inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(5,7,15,.80) 0%, rgba(5,7,15,.58) 34%, rgba(5,7,15,.24) 56%, rgba(5,7,15,.04) 78%, rgba(5,7,15,.12) 100%),
+    linear-gradient(180deg, rgba(5,7,15,.55) 0%, transparent 20%, transparent 74%, #05070f 100%);
+}
+.sky-note {
+  position: absolute; right: 14px; bottom: 8px; z-index: 2;
+  font-family: var(--mono); font-size: .6rem; letter-spacing: .4px;
+  color: rgba(255,255,255,.34); text-align: right;
+}
+
+/* East Asia night-lights photo background (index-night.html, archived hero) */
 .hero-net { position: absolute; inset: 0; width: 100%; z-index: 0; pointer-events: none; background: #05070f; overflow: hidden; }
 .map-stage {
   position: absolute;
@@ -359,6 +377,7 @@ a { color: var(--navy); text-decoration: none; }
   .nav-toggle { display: flex; }
   .brand-logo { height: 30px; }
   .hero-title { white-space: normal; }
+  .sky-note { display: none; }
   .robot { display: none; }
   .hero-net { position: absolute; inset: 0; width: 100%; margin: 0; }
   .map-stage { top: 16px; right: 0; height: auto; width: 100%; transform: none; }
