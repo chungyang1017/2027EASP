@@ -27,10 +27,16 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
-      - name: Upload site (網頁/)
+      - name: Stage site (serve at both / and /網頁/)
+        run: |
+          mkdir -p _site/網頁
+          cp -R 網頁/. _site/
+          cp -R 網頁/. _site/網頁/
+          rm -rf _site/網頁/網頁
+      - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "網頁"
+          path: "_site"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
