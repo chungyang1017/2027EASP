@@ -168,7 +168,13 @@ a { color: var(--navy); text-decoration: none; }
   object-fit: contain;
   object-position: center;
   opacity: .98;
-  filter: brightness(1.16) contrast(1.1) saturate(.98);
+  filter: brightness(1.08) contrast(1.05);
+  animation: night-drift 80s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes night-drift {
+  from { transform: scale(1); }
+  to { transform: scale(1.045) translate(-.5%, -.35%); }
 }
 .hero-net::after {
   content: "";
@@ -186,19 +192,19 @@ a { color: var(--navy); text-decoration: none; }
   transform: translateY(-50%);
   padding-left: 9px;
   font-family: var(--mono);
-  font-size: .68rem;
-  letter-spacing: .4px;
-  color: rgba(222,242,255,.95);
+  font-size: .64rem;
+  letter-spacing: .6px;
+  color: rgba(222,242,255,.82);
   text-shadow: 0 1px 4px #000, 0 0 9px rgba(0,0,0,.95);
   white-space: nowrap;
 }
 .map-stage .city::before {
   content: "";
   position: absolute; left: 0; top: 50%;
-  width: 4px; height: 4px; margin-top: -2px;
+  width: 3px; height: 3px; margin-top: -1.5px;
   border-radius: 50%;
   background: #bfe6ff;
-  box-shadow: 0 0 6px rgba(191,230,255,.9);
+  box-shadow: 0 0 5px rgba(191,230,255,.8);
 }
 /* Taiwan — host city, most prominent + twinkling */
 .taiwan-glow {
@@ -220,24 +226,24 @@ a { color: var(--navy); text-decoration: none; }
   transform: translate(-50%, -50%);
 }
 .taiwan-glow i {
-  width: 13px;
-  height: 13px;
+  width: 10px;
+  height: 10px;
   background: #ffe2a6;
-  box-shadow: 0 0 18px #ffd27a, 0 0 46px rgba(255,170,60,1), 0 0 98px rgba(255,126,37,.72);
-  animation: taiwan-flash 1.25s ease-in-out infinite;
+  box-shadow: 0 0 14px #ffd27a, 0 0 34px rgba(255,170,60,.9), 0 0 70px rgba(255,126,37,.55);
+  animation: taiwan-flash 2.4s ease-in-out infinite;
 }
 .taiwan-glow::before {
-  width: 32px;
-  height: 32px;
-  border: 1.5px solid rgba(255,210,122,.85);
-  box-shadow: 0 0 22px rgba(255,126,37,.55);
-  animation: taiwan-pulse 1.25s ease-out infinite;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255,210,122,.8);
+  box-shadow: 0 0 18px rgba(255,126,37,.45);
+  animation: taiwan-pulse 2.4s ease-out infinite;
 }
 .taiwan-glow::after {
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle, rgba(255,210,122,.5) 0%, rgba(255,126,37,.26) 38%, transparent 70%);
-  animation: taiwan-halo 1.25s ease-in-out infinite;
+  width: 62px;
+  height: 62px;
+  background: radial-gradient(circle, rgba(255,210,122,.42) 0%, rgba(255,126,37,.2) 38%, transparent 70%);
+  animation: taiwan-halo 2.4s ease-in-out infinite;
 }
 .taiwan-glow b {
   position: absolute;
@@ -267,7 +273,8 @@ a { color: var(--navy); text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .taiwan-glow i,
   .taiwan-glow::before,
-  .taiwan-glow::after { animation: none; }
+  .taiwan-glow::after,
+  .hero-net .night { animation: none; }
 }
 
 /* ---------- Sections ---------- */
