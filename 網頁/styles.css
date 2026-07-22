@@ -98,7 +98,7 @@ a { color: var(--navy); text-decoration: none; }
 .hero-bg::after {
   content: none;
 }
-.hero-inner { text-shadow: 0 1px 10px rgba(5,7,15,.85), 0 0 26px rgba(5,7,15,.6); }
+.hero:has(.hero-sky) .hero-inner { text-shadow: 0 1px 10px rgba(5,7,15,.85), 0 0 26px rgba(5,7,15,.6); }
 .hero-eyebrow { font-family: var(--mono); text-transform: uppercase; letter-spacing: 2.5px; font-size: .78rem; font-weight: 600; color: rgba(255,218,166,.9); margin-bottom: 1rem; }
 .hero-title { font-size: clamp(1.9rem, 4.6vw, 3.5rem); font-weight: 700; letter-spacing: -.5px; white-space: nowrap; }
 .hero-theme { font-family: var(--serif); font-size: clamp(1.35rem, 3vw, 2.1rem); font-weight: 600; line-height: 1.15; letter-spacing: -.3px; color: #f6c473; margin-top: .7rem; }

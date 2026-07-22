@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EASP 2027 — East Asian Social Policy Network Conference (night-map hero, archived)</title>
+  <title>EASP 2027 — East Asian Social Policy Network Conference (solar-system hero, archived)</title>
   <meta name="description" content="EASP 2027, Taiwan, 30 June – 2 July 2027 — Back to the Future: how digitalization, automation, and AI are reshaping welfare states and welfare governance across East Asia." />
 
   <!-- Social preview -->
@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=13" />
+  <link rel="stylesheet" href="styles.css?v=15" />
 </head>
 <body>
   <!-- ============ HEADER / NAV ============ -->
@@ -48,7 +48,6 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
     <div class="container hero-inner">
       <p class="hero-eyebrow">East Asian Social Policy Research Network · Taiwan 2027</p>
       <h1 class="hero-title">The 2027 EASP Conference</h1>
@@ -77,15 +76,9 @@
         <a href="#register" class="btn btn-ghost">Register your interest</a>
       </div>
     </div>
-    <div class="hero-net" aria-hidden="true">
-      <div class="map-stage">
-        <img class="night" src="assets/easp-eastasia-night-wide.jpg?v=1" alt="" />
-        <span class="city" style="left:51%;top:37%">Beijing</span>
-        <span class="city" style="left:61%;top:41%">Seoul</span>
-        <span class="city" style="left:74%;top:44%">Tokyo</span>
-        <span class="city" style="left:48%;top:65%">Hong Kong</span>
-        <span class="taiwan-glow" style="left:56%;top:62%"><i></i><b>Taipei</b></span>
-      </div>
+    <div class="hero-sky" aria-hidden="true">
+      <canvas id="solarSky"></canvas>
+      <p class="sky-note">Real-time solar system · planetary positions for today (J2000 elements) · true periods &amp; eccentricities · distances compressed</p>
     </div>
   </section>
 
@@ -299,11 +292,12 @@
     </div>
     <div class="container footer-bottom">
       <p>© 2027 East Asian Social Policy network. All rights reserved.</p>
-      <p class="map-credit">East Asia at night: NASA Earth Observatory / VIIRS · public domain</p>
+      <p class="map-credit">Hero: real-time solar system, computed from J2000 orbital elements</p>
       <p><a href="#top">Back to top ↑</a></p>
     </div>
   </footer>
 
   <script src="script.js?v=7"></script>
+  <script src="solar.js?v=2"></script>
 </body>
 </html>
