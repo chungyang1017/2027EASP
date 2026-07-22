@@ -98,6 +98,7 @@ a { color: var(--navy); text-decoration: none; }
 .hero-bg::after {
   content: none;
 }
+.hero-inner { text-shadow: 0 1px 10px rgba(5,7,15,.85), 0 0 26px rgba(5,7,15,.6); }
 .hero-eyebrow { font-family: var(--mono); text-transform: uppercase; letter-spacing: 2.5px; font-size: .78rem; font-weight: 600; color: rgba(255,218,166,.9); margin-bottom: 1rem; }
 .hero-title { font-size: clamp(1.9rem, 4.6vw, 3.5rem); font-weight: 700; letter-spacing: -.5px; white-space: nowrap; }
 .hero-theme { font-family: var(--serif); font-size: clamp(1.35rem, 3vw, 2.1rem); font-weight: 600; line-height: 1.15; letter-spacing: -.3px; color: #f6c473; margin-top: .7rem; }
@@ -141,8 +142,8 @@ a { color: var(--navy); text-decoration: none; }
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(5,7,15,.80) 0%, rgba(5,7,15,.58) 34%, rgba(5,7,15,.24) 56%, rgba(5,7,15,.04) 78%, rgba(5,7,15,.12) 100%),
-    linear-gradient(180deg, rgba(5,7,15,.55) 0%, transparent 20%, transparent 74%, #05070f 100%);
+    linear-gradient(90deg, rgba(5,7,15,.60) 0%, rgba(5,7,15,.40) 34%, rgba(5,7,15,.16) 56%, rgba(5,7,15,.02) 78%, rgba(5,7,15,.08) 100%),
+    linear-gradient(180deg, rgba(5,7,15,.50) 0%, transparent 20%, transparent 76%, #05070f 100%);
 }
 .sky-note {
   position: absolute; right: 14px; bottom: 8px; z-index: 2;
