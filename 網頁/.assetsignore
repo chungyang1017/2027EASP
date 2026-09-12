@@ -1,0 +1,5 @@
+# 本機工具狀態，不屬於網站
+.DS_Store
+agentdb.rvf
+agentdb.rvf.lock
+ruvector.db

@@ -1,0 +1,12 @@
+{
+  // 部署指令固定為 `npx wrangler deploy`，不要再手動傳 --assets。
+  // directory 指向 網頁/，網站因此直接落在網域根路徑，
+  // 訪客網址不會出現百分比編碼的中文目錄名。
+  // 排除規則見 網頁/.assetsignore —— 若改動 directory，
+  // .assetsignore 必須一併搬到新的 assets 根目錄。
+  "name": "taiwan",
+  "compatibility_date": "2026-09-11",
+  "assets": {
+    "directory": "./網頁"
+  }
+}
