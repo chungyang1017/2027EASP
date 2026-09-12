@@ -101,6 +101,7 @@ a { color: var(--navy); text-decoration: none; }
 .hero:has(.hero-sky) .hero-inner { text-shadow: 0 1px 10px rgba(5,7,15,.85), 0 0 26px rgba(5,7,15,.6); }
 .hero-eyebrow { font-family: var(--mono); text-transform: uppercase; letter-spacing: 2.5px; font-size: .78rem; font-weight: 600; color: rgba(255,218,166,.9); margin-bottom: 1rem; }
 .hero-title { font-size: clamp(1.9rem, 4.6vw, 3.5rem); font-weight: 700; letter-spacing: -.5px; white-space: nowrap; }
+.hero-joint { max-width: 54ch; font-size: clamp(.88rem, 1.7vw, .98rem); line-height: 1.55; color: rgba(255,255,255,.72); margin-top: .9rem; }
 .hero-theme { font-family: var(--serif); font-size: clamp(1.35rem, 3vw, 2.1rem); font-weight: 600; line-height: 1.15; letter-spacing: -.3px; color: #f6c473; margin-top: .7rem; }
 .hero-sub { max-width: 46ch; font-size: clamp(1rem, 2.1vw, 1.18rem); color: rgba(255,255,255,.84); margin: 1.1rem 0 2.2rem; }
 .hero-meta { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.4rem; }
@@ -319,6 +320,13 @@ a { color: var(--navy); text-decoration: none; }
 .topic-card h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: .4rem; }
 .topic-card p { color: var(--slate); font-size: .95rem; }
 
+/* Four-axis theme cards */
+.topics-axes { grid-template-columns: repeat(2, 1fr); }
+.topics-axes .topic-card { padding: 1.8rem; }
+.topics-axes .topic-card h3 { font-family: var(--serif); font-size: 1.3rem; margin-bottom: .7rem; }
+.topics-axes .topic-card p { line-height: 1.65; }
+.axis-tag { display: inline-block; font-family: var(--mono); text-transform: uppercase; letter-spacing: 1.4px; font-size: .68rem; font-weight: 700; color: var(--gold); background: var(--gold-soft); padding: .28rem .6rem; border-radius: 999px; margin-bottom: .8rem; }
+
 /* ---------- Timeline ---------- */
 .timeline { list-style: none; max-width: 760px; border-left: 2px solid var(--line); margin-left: 8px; }
 .timeline li { position: relative; padding: 0 0 2rem 2rem; }
@@ -390,7 +398,7 @@ a { color: var(--navy); text-decoration: none; }
   .hero-net { position: absolute; inset: 0; width: 100%; margin: 0; }
   .map-stage { top: 16px; right: 0; height: auto; width: 100%; transform: none; }
   .taiwan-glow b { display: none; }
-  .about-grid, .topics, .speakers-grid, .venue-grid, .footer-grid { grid-template-columns: 1fr; }
+  .about-grid, .topics, .topics-axes, .speakers-grid, .venue-grid, .footer-grid { grid-template-columns: 1fr; }
   .topics, .speakers-grid, .venue-grid { gap: 1rem; }
 }
 

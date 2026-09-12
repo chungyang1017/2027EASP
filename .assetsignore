@@ -1,0 +1,17 @@
+# 版控與工具狀態（不屬於網站）
+**/.git
+**/.github
+**/.remember
+**/.claude
+**/.wrangler
+**/.DS_Store
+**/node_modules
+
+# 內部文件：計畫書、演講者 CV、經費估算、會議議程 —— 絕不公開
+/2027 EASP計畫書/
+/EASP會議事務/
+
+# 本機工具資料庫
+**/agentdb.rvf
+**/agentdb.rvf.lock
+**/ruvector.db
