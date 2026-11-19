@@ -6,7 +6,18 @@
   // .assetsignore 必須一併搬到新的 assets 根目錄。
   "name": "taiwan",
   "compatibility_date": "2026-09-11",
+  // 舊網址與 www 301 轉到 easpfiss2027.org（site-worker.js），所以每個請求都先經過 Worker。
+  "main": "site-worker.js",
   "assets": {
-    "directory": "./網頁"
-  }
+    "directory": "./網頁",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  // 2026-10-13 教授買了 easpfiss2027.org（Cloudflare Registrar），網站接到這個網域。
+  // 加了 routes 之後 workers.dev 預設會關掉，要明確打開，舊網址才不會斷。
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "easpfiss2027.org", "custom_domain": true },
+    { "pattern": "www.easpfiss2027.org", "custom_domain": true }
+  ]
 }

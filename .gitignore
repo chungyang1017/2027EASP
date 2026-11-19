@@ -8,3 +8,6 @@ ruvector.db
 
 # Internal meeting documents (not for the public repo)
 EASP會議事務/
+
+# LINE 團隊助理 EASP助理（另行部署的 Worker；有成員 LINE ID 和 node_modules，不放進公開的 repo）
+EASP助理/

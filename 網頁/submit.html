@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Submit your proposal | EASP × FISS 2027</title><meta name="description" content="Submit an individual paper or poster, or a complete panel, to the 23rd EASP and 33rd FISS Joint International Conference, National Taiwan University, Taipei, 30 June – 2 July 2027."><link rel="canonical" href="https://easpfiss2027.org/submit"><link rel="icon" href="data:,"><link rel="stylesheet" href="claude-theme.css">
+<style>
+/* 投稿頁專用（Claude 風格；共用樣式在 claude-theme.css）。投稿區塊與表單樣式由 cfp.html 搬來。 */
+/* 主標題用 h1，外觀比照原本的區塊標題 h2 */
+.section h1{max-width:900px;font-size:clamp(38px,5vw,68px);font-weight:700;line-height:1.02;letter-spacing:-.055em;text-wrap:balance}
+.section-intro a,.form-note a{color:#a3553c;text-decoration:underline;text-underline-offset:3px}
+.form-note{max-width:860px;margin-top:22px;padding:14px 18px;border-left:3px solid #cc785c;background:#faf9f5;font-size:16px}
+.form-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.form-tabs button{min-height:46px;padding:10px 20px;border:1px solid var(--line);border-radius:999px;background:#faf9f5;color:var(--ink);font-size:15px;cursor:pointer}
+.form-tabs button[aria-selected="true"]{background:#2f4a45;border-color:#2f4a45;color:#faf9f5}
+.sub-form{display:grid;gap:20px;max-width:860px;margin-top:20px;padding:32px;border:1px solid var(--line);border-radius:24px;background:#faf9f5}
+.fld{display:grid;gap:8px;min-width:0;margin:0;padding:0;border:0;color:var(--ink);font-size:15px;font-weight:700}
+.fld input,.fld select,.fld textarea{width:100%;padding:12px 14px;border:1px solid #cfc9bf;border-radius:10px;background:#fff;color:var(--ink);font:400 16px/1.5 var(--body-font)}
+.fld textarea{resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:2px solid #a3553c;outline-offset:1px;border-color:#a3553c}
+.fld legend,.paper legend{margin-bottom:8px;padding:0;font-size:15px;font-weight:700}
+.hint{color:var(--muted);font-size:14px;font-weight:400}
+.opt{display:inline-flex;align-items:center;gap:8px;margin-right:24px;font-size:16px;font-weight:400}
+.opt-stack .opt{display:flex;margin:8px 0 0}
+.fld[hidden]{display:none}
+.opt input{width:18px;height:18px;accent-color:#a3553c}
+.fld-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.paper{display:grid;gap:16px;min-width:0;margin:0;padding:22px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.sub-form .button{justify-self:start;border:0;cursor:pointer}
+.sub-form .button:disabled{opacity:.6;cursor:wait}
+.form-status{min-height:1.5em;font-size:16px}
+.form-status.ok{padding:14px 18px;border-radius:10px;background:#dff2e5;color:#1b6532}
+.form-status.err{padding:14px 18px;border-radius:10px;background:#fbe6e1;color:#8a2a17}
+@media (max-width:760px){.section h1{font-size:clamp(37px,10vw,58px)}.fld-row{grid-template-columns:1fr}.sub-form{padding:20px}}
+</style>
+</head>
+<body class="theme-claude">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+<div class="wrap header-row">
+<a class="brand" href="./" aria-label="EASP × FISS 2027 home">
+<img src="assets/easp-logo.gif" alt="EASP" width="81" height="33"><img class="brand-fiss" src="assets/fiss-logo.svg" alt="FISS" width="74" height="33">
+<span class="brand-lockup">2027<small>TAIPEI, TAIWAN</small></span>
+</a>
+<button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">Menu</button>
+<nav class="main-nav" id="main-nav" aria-label="Primary">
+<a href="./#about">About</a><a href="./#theme">Theme</a><a href="./#dates">Key Dates</a><a href="cfp">Call for Papers</a><a href="cfp#awards">Awards</a><a href="./#speakers">Speakers</a><a href="./#venue">Venue</a><a class="nav-cta" href="submit" aria-current="page">Submit</a><a href="./#register">Registration ↗</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="section section-alt" id="submit">
+<div class="wrap">
+<span class="section-label">Submission</span>
+<h1>Submit your proposal</h1>
+<p class="section-intro">Submit an individual paper or poster, or a complete panel, using the forms below. You will receive a confirmation email within 24 hours. If you do not receive it, please email <a href="mailto:easp.fiss.2027@gmail.com">easp.fiss.2027@gmail.com</a>.</p>
+<p class="form-note">Abstracts are reviewed anonymously. Please do not include author names or affiliations in the title or abstract.</p>
+<div class="form-tabs" role="tablist" aria-label="Submission type">
+          <button type="button" role="tab" id="tab-paper" aria-controls="panel-paper" aria-selected="true">Paper or poster</button>
+          <button type="button" role="tab" id="tab-panel" aria-controls="panel-panel" aria-selected="false" tabindex="-1">Panel</button>
+        </div>
+        <div role="tabpanel" id="panel-paper" aria-labelledby="tab-paper">
+          <form class="sub-form" id="form-paper">
+            <fieldset class="fld"><legend>Presentation format</legend>
+              <label class="opt"><input type="radio" name="format" value="Oral presentation" required> Oral presentation</label>
+              <label class="opt"><input type="radio" name="format" value="Poster"> Poster</label>
+            </fieldset>
+            <fieldset class="fld" id="poster-fallback" hidden><legend>If not accepted as an oral presentation, are you willing to be considered as a poster presentation?</legend>
+              <label class="opt"><input type="radio" name="posterok" value="Yes"> Yes</label>
+              <label class="opt"><input type="radio" name="posterok" value="No"> No</label>
+            </fieldset>
+            <label class="fld">Stream<select name="stream" required><option value="" disabled selected>Select a stream</option><option value="AI and Social Policy: Automation, Platform Work and Social Protection">01. AI and Social Policy: Automation, Platform Work and Social Protection</option><option value="Eco-social Policy: Climate Change, Just Transition and Sustainable Welfare">02. Eco-social Policy: Climate Change, Just Transition and Sustainable Welfare</option><option value="East Asian Welfare Regimes: Theories, Debates and Transformations">03. East Asian Welfare Regimes: Theories, Debates and Transformations</option><option value="Euro-Asia Comparative Welfare">04. Euro-Asia Comparative Welfare</option><option value="Population Ageing, Pensions and Old-age Income Security">05. Population Ageing, Pensions and Old-age Income Security</option><option value="Long-term Care and Care Policy">06. Long-term Care and Care Policy</option><option value="Family Policy, Gender and Ultra-low Fertility">07. Family Policy, Gender and Ultra-low Fertility</option><option value="Labour Market Change, Employment and Skills Policy">08. Labour Market Change, Employment and Skills Policy</option><option value="Poverty, Inequality and Social Assistance">09. Poverty, Inequality and Social Assistance</option><option value="Health, Mental Health and Disability Policy">10. Health, Mental Health and Disability Policy</option><option value="Migration, Migrant Workers and Social Policy">11. Migration, Migrant Workers and Social Policy</option><option value="Housing and Urban Policy">12. Housing and Urban Policy</option><option value="Social Investment, Social Innovation and Welfare Governance">13. Social Investment, Social Innovation and Welfare Governance</option><option value="Open Stream">14. Open Stream</option></select></label>
+            <label class="fld">Title<input name="title" required></label>
+            <label class="fld">Abstract <span class="hint">250–300 words</span><textarea name="abstract" rows="9" required></textarea></label>
+            <div class="fld-row">
+              <label class="fld">Presenting author<input name="author" autocomplete="name" required></label>
+              <label class="fld">Email<input type="email" name="email" autocomplete="email" required></label>
+            </div>
+            <div class="fld-row">
+              <label class="fld">Affiliation<input name="affiliation" autocomplete="organization" required></label>
+              <label class="fld">Country<input name="country" autocomplete="country-name" required></label>
+            </div>
+            <label class="fld">Co-authors <span class="hint">Optional. Names and affiliations.</span><textarea name="coauthors" rows="3"></textarea></label>
+            <fieldset class="fld opt-stack"><legend>EASP Best Paper Awards <span class="hint">Optional. Open to the sole or first author. <a href="cfp#awards">Award details</a></span></legend>
+              <label class="opt"><input type="radio" name="award" value="Not applying" checked> Not applying</label>
+              <label class="opt"><input type="radio" name="award" value="PhD Student Award"> EASP Postgraduate Award (current PhD student)</label>
+              <label class="opt"><input type="radio" name="award" value="Early Career Researcher Award"> EASP Early Career Researcher Award (PhD received within the past six years)</label>
+            </fieldset>
+            <button class="button" type="submit">Submit</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <div role="tabpanel" id="panel-panel" aria-labelledby="tab-panel" hidden>
+          <form class="sub-form" id="form-panel">
+            <label class="fld">Closest stream <span class="hint">Optional, for scheduling. A panel forms its own session; the stream only helps us schedule it.</span><select name="stream"><option value="" selected>Not specified</option><option value="AI and Social Policy: Automation, Platform Work and Social Protection">01. AI and Social Policy: Automation, Platform Work and Social Protection</option><option value="Eco-social Policy: Climate Change, Just Transition and Sustainable Welfare">02. Eco-social Policy: Climate Change, Just Transition and Sustainable Welfare</option><option value="East Asian Welfare Regimes: Theories, Debates and Transformations">03. East Asian Welfare Regimes: Theories, Debates and Transformations</option><option value="Euro-Asia Comparative Welfare">04. Euro-Asia Comparative Welfare</option><option value="Population Ageing, Pensions and Old-age Income Security">05. Population Ageing, Pensions and Old-age Income Security</option><option value="Long-term Care and Care Policy">06. Long-term Care and Care Policy</option><option value="Family Policy, Gender and Ultra-low Fertility">07. Family Policy, Gender and Ultra-low Fertility</option><option value="Labour Market Change, Employment and Skills Policy">08. Labour Market Change, Employment and Skills Policy</option><option value="Poverty, Inequality and Social Assistance">09. Poverty, Inequality and Social Assistance</option><option value="Health, Mental Health and Disability Policy">10. Health, Mental Health and Disability Policy</option><option value="Migration, Migrant Workers and Social Policy">11. Migration, Migrant Workers and Social Policy</option><option value="Housing and Urban Policy">12. Housing and Urban Policy</option><option value="Social Investment, Social Innovation and Welfare Governance">13. Social Investment, Social Innovation and Welfare Governance</option><option value="Open Stream">14. Open Stream</option></select></label>
+            <label class="fld">Panel title<input name="ptitle" required></label>
+            <label class="fld">Panel abstract<textarea name="pabstract" rows="7" required></textarea></label>
+            <div class="fld-row">
+              <label class="fld">Organiser<input name="organiser" autocomplete="name" required></label>
+              <label class="fld">Email<input type="email" name="email" autocomplete="email" required></label>
+            </div>
+            <div class="fld-row">
+              <label class="fld">Affiliation<input name="affiliation" autocomplete="organization" required></label>
+              <label class="fld">Country<input name="country" autocomplete="country-name" required></label>
+            </div>
+            <fieldset class="paper"><legend>Paper 1</legend>
+              <label class="fld">Title<input name="p1t" required></label>
+              <label class="fld">Authors and affiliations<input name="p1a" required></label>
+              <label class="fld">Abstract<textarea name="p1b" rows="6" required></textarea></label>
+              <label class="fld">EASP Best Paper Award <span class="hint">Optional. Open to the sole or first author. <a href="cfp#awards">Award details</a></span><select name="p1w"><option value="">Not applying</option><option value="PhD Student Award">EASP Postgraduate Award (current PhD student)</option><option value="Early Career Researcher Award">EASP Early Career Researcher Award (PhD received within the past six years)</option></select></label>
+            </fieldset>
+            <fieldset class="paper"><legend>Paper 2</legend>
+              <label class="fld">Title<input name="p2t" required></label>
+              <label class="fld">Authors and affiliations<input name="p2a" required></label>
+              <label class="fld">Abstract<textarea name="p2b" rows="6" required></textarea></label>
+              <label class="fld">EASP Best Paper Award <span class="hint">Optional. Open to the sole or first author. <a href="cfp#awards">Award details</a></span><select name="p2w"><option value="">Not applying</option><option value="PhD Student Award">EASP Postgraduate Award (current PhD student)</option><option value="Early Career Researcher Award">EASP Early Career Researcher Award (PhD received within the past six years)</option></select></label>
+            </fieldset>
+            <fieldset class="paper"><legend>Paper 3</legend>
+              <label class="fld">Title<input name="p3t" required></label>
+              <label class="fld">Authors and affiliations<input name="p3a" required></label>
+              <label class="fld">Abstract<textarea name="p3b" rows="6" required></textarea></label>
+              <label class="fld">EASP Best Paper Award <span class="hint">Optional. Open to the sole or first author. <a href="cfp#awards">Award details</a></span><select name="p3w"><option value="">Not applying</option><option value="PhD Student Award">EASP Postgraduate Award (current PhD student)</option><option value="Early Career Researcher Award">EASP Early Career Researcher Award (PhD received within the past six years)</option></select></label>
+            </fieldset>
+            <fieldset class="paper"><legend>Paper 4 (optional)</legend>
+              <label class="fld">Title<input name="p4t"></label>
+              <label class="fld">Authors and affiliations<input name="p4a"></label>
+              <label class="fld">Abstract<textarea name="p4b" rows="6"></textarea></label>
+              <label class="fld">EASP Best Paper Award <span class="hint">Optional. Open to the sole or first author. <a href="cfp#awards">Award details</a></span><select name="p4w"><option value="">Not applying</option><option value="PhD Student Award">EASP Postgraduate Award (current PhD student)</option><option value="Early Career Researcher Award">EASP Early Career Researcher Award (PhD received within the past six years)</option></select></label>
+            </fieldset>
+            <button class="button" type="submit">Submit panel</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+</div>
+</section>
+</main>
+<footer class="site-footer" id="contact">
+<div class="wrap footer-grid">
+<div><div class="footer-brand">EASP × FISS 2027</div><p>The 23rd International Conference of the East Asian Social Policy research network (EASP), held jointly with the 33rd International Conference of the Foundation for International Studies on Social Security (FISS).</p></div>
+<div><h3>Navigate</h3><ul><li><a href="./#about">About</a></li><li><a href="./#theme">Theme</a></li><li><a href="cfp">Call for Papers</a></li><li><a href="./#register">Register</a></li></ul></div>
+<div><h3>Contact</h3><ul><li>EASP × FISS 2027 Organising Committee</li><li><a href="https://ntusw.ntu.edu.tw/?locale=en" target="_blank" rel="noopener">Department of Social Work,<br>National Taiwan University</a></li><li><a href="mailto:easp.fiss.2027@gmail.com">easp.fiss.2027@gmail.com</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><p>© 2027 East Asian Social Policy network. All rights reserved.</p><p><a href="text">Text-only version</a></p><p><a href="#top">Back to top ↑</a></p></div>
+</footer>
+<script>(()=>{const m=document.querySelector('.menu-button'),n=document.querySelector('.main-nav');if(!m||!n)return;const close=()=>{n.classList.remove('is-open');m.setAttribute('aria-expanded','false')};m.addEventListener('click',()=>{const o=m.getAttribute('aria-expanded')!=='true';m.setAttribute('aria-expanded',String(o));n.classList.toggle('is-open',o)});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&n.classList.contains('is-open')){close();m.focus()}})})();</script>
+<script>
+/* 投稿表單：資料以 no-cors 送進 Google 表單（同社會政策課的簽到做法），送出後顯示投稿編號。 */
+(()=>{
+const CONTACT='easp.fiss.2027@gmail.com';
+const CFG={
+  paper:{endpoint:'https://docs.google.com/forms/d/e/1FAIpQLSfTKOIeMeIrwL9GzagzqsFMmIgTYsr_LWTZV-cBvwGopD-Xtw/formResponse',prefix:'P',
+    f:{"id": "entry.995306747", "format": "entry.533827576", "stream": "entry.1269003987", "title": "entry.1622521241", "abstract": "entry.1160982437", "author": "entry.1417927186", "email": "entry.1529309488", "affiliation": "entry.1391436120", "country": "entry.1074306785", "coauthors": "entry.1007628357", "posterok": "entry.1424138205", "award": "entry.1617556061"}},
+  panel:{endpoint:'https://docs.google.com/forms/d/e/1FAIpQLSfLCE9WUNvR6yi4U-qouK0guuggoMdZbzzljpTgDEpLPPsIJg/formResponse',prefix:'N',
+    f:{"id": "entry.995306747", "stream": "entry.533827576", "ptitle": "entry.1269003987", "pabstract": "entry.1622521241", "organiser": "entry.1160982437", "email": "entry.1417927186", "affiliation": "entry.1529309488", "country": "entry.1391436120", "p1": "entry.1074306785", "p2": "entry.1007628357", "p3": "entry.1304449812", "p4": "entry.1970929513"}}
+};
+const newId=p=>{const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',a=new Uint32Array(6);crypto.getRandomValues(a);return p+'-'+Array.from(a,n=>c[n%c.length]).join('');};
+const tabs=[document.getElementById('tab-paper'),document.getElementById('tab-panel')];
+const show=t=>{tabs.forEach(b=>{const on=b===t;b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on;});};
+tabs.forEach((b,i)=>{b.addEventListener('click',()=>show(b));b.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=tabs[(i+1)%2];show(n);n.focus();}});});
+const v=(form,name)=>(form.elements[name]?form.elements[name].value:'').trim();
+const paperText=(form,n)=>{const t=v(form,'p'+n+'t'),a=v(form,'p'+n+'a'),b=v(form,'p'+n+'b'),w=v(form,'p'+n+'w');return (t||a||b)?'Title: '+t+'\nAuthors: '+a+(w?'\nEASP Best Paper Award: '+w:'')+'\n\nAbstract:\n'+b:'';};
+/* 選口頭發表時才問「沒錄取口頭要不要改海報」，而且必填 */
+const pf=document.getElementById('poster-fallback'),fp=document.getElementById('form-paper');
+const syncPoster=()=>{const oral=!!fp.querySelector('input[name=format][value="Oral presentation"]:checked');pf.hidden=!oral;pf.querySelectorAll('input').forEach(i=>{i.required=oral;if(!oral)i.checked=false;});};
+fp.querySelectorAll('input[name=format]').forEach(i=>i.addEventListener('change',syncPoster));
+fp.addEventListener('reset',()=>setTimeout(syncPoster,0));
+function wire(kind){
+  const form=document.getElementById('form-'+kind),btn=form.querySelector('button[type=submit]'),note=form.querySelector('.form-status'),c=CFG[kind];
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const id=newId(c.prefix),email=v(form,'email'),fd=new FormData();
+    fd.append(c.f.id,id);
+    if(kind==='paper'){
+      const fmt=form.querySelector('input[name=format]:checked');
+      fd.append(c.f.format,fmt?fmt.value:'');
+      ['stream','title','abstract','author','email','affiliation','country','coauthors'].forEach(k=>fd.append(c.f[k],v(form,k)));
+      const pok=form.querySelector('input[name=posterok]:checked'),aw=form.querySelector('input[name=award]:checked');
+      fd.append(c.f.posterok,fmt&&fmt.value==='Oral presentation'&&pok?pok.value:'');
+      fd.append(c.f.award,aw?aw.value:'Not applying');
+    }else{
+      ['stream','ptitle','pabstract','organiser','email','affiliation','country'].forEach(k=>fd.append(c.f[k],v(form,k)));
+      [1,2,3,4].forEach(n=>fd.append(c.f['p'+n],paperText(form,n)));
+    }
+    btn.disabled=true;note.className='form-status';note.textContent='Sending…';
+    fetch(c.endpoint,{method:'POST',mode:'no-cors',body:fd})
+    .then(()=>{
+      form.reset();
+      note.className='form-status ok';
+      note.textContent='Thank you. Your submission ID is '+id+'. A confirmation email will be sent to '+email+' within 24 hours. If you do not receive it, please email '+CONTACT+' and quote your submission ID.';
+    })
+    .catch(()=>{
+      note.className='form-status err';
+      note.textContent='Your submission could not be sent. Please check your connection and try again. If the problem continues, please email '+CONTACT+'.';
+    })
+    .finally(()=>{btn.disabled=false;});
+  });
+}
+wire('paper');wire('panel');
+/* 從徵稿頁的卡片連過來：#panel 開 Panel 分頁；#paper、#poster 開論文分頁並先選好形式 */
+const h=location.hash.slice(1);
+if(h==='panel')show(tabs[1]);
+else if(h==='paper'||h==='poster'){show(tabs[0]);const r=document.querySelector('#form-paper input[name=format][value="'+(h==='poster'?'Poster':'Oral presentation')+'"]');if(r){r.checked=true;r.dispatchEvent(new Event('change'));}}
+})();
+</script>
+</body>
+</html>
